@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E205DAA415A2D69300506F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E205DAA315A2D69300506F69 /* UIKit.framework */; };
+		E205DAA615A2D69300506F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E205DAA515A2D69300506F69 /* Foundation.framework */; };
+		E205DAA815A2D69300506F69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E205DAA715A2D69300506F69 /* CoreGraphics.framework */; };
+		E205DAAE15A2D69300506F69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E205DAAC15A2D69300506F69 /* InfoPlist.strings */; };
+		E205DAB015A2D69300506F69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAAF15A2D69300506F69 /* main.m */; };
+		E205DAB415A2D69300506F69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAB315A2D69300506F69 /* AppDelegate.m */; };
+		E205DAB715A2D69300506F69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAB615A2D69300506F69 /* ViewController.m */; };
+		E205DABA15A2D69300506F69 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E205DAB815A2D69300506F69 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E205DA9F15A2D69300506F69 /* RouleVite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouleVite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E205DAA315A2D69300506F69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E205DAA515A2D69300506F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E205DAA715A2D69300506F69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E205DAAB15A2D69300506F69 /* RouleVite-Info.plist */ = {isa = PBXFileReference; path = "RouleVite-Info.plist"; sourceTree = "<group>"; };
+		E205DAAD15A2D69300506F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E205DAAF15A2D69300506F69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E205DAB115A2D69300506F69 /* RouleVite-Prefix.pch */ = {isa = PBXFileReference; path = "RouleVite-Prefix.pch"; sourceTree = "<group>"; };
+		E205DAB215A2D69300506F69 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E205DAB315A2D69300506F69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E205DAB515A2D69300506F69 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E205DAB615A2D69300506F69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E205DAB915A2D69300506F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E205DA9C15A2D69300506F69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E205DAA415A2D69300506F69 /* UIKit.framework in Frameworks */,
+				E205DAA615A2D69300506F69 /* Foundation.framework in Frameworks */,
+				E205DAA815A2D69300506F69 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E205DA9415A2D69200506F69 = {
+			isa = PBXGroup;
+			children = (
+				E205DAA915A2D69300506F69 /* RouleVite */,
+				E205DAA215A2D69300506F69 /* Frameworks */,
+				E205DAA015A2D69300506F69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E205DAA015A2D69300506F69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E205DA9F15A2D69300506F69 /* RouleVite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E205DAA215A2D69300506F69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E205DAA315A2D69300506F69 /* UIKit.framework */,
+				E205DAA515A2D69300506F69 /* Foundation.framework */,
+				E205DAA715A2D69300506F69 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E205DAA915A2D69300506F69 /* RouleVite */ = {
+			isa = PBXGroup;
+			children = (
+				E205DAB215A2D69300506F69 /* AppDelegate.h */,
+				E205DAB315A2D69300506F69 /* AppDelegate.m */,
+				E205DAB515A2D69300506F69 /* ViewController.h */,
+				E205DAB615A2D69300506F69 /* ViewController.m */,
+				E205DAB815A2D69300506F69 /* ViewController.xib */,
+				E205DAAA15A2D69300506F69 /* Supporting Files */,
+			);
+			path = RouleVite;
+			sourceTree = "<group>";
+		};
+		E205DAAA15A2D69300506F69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E205DAAB15A2D69300506F69 /* RouleVite-Info.plist */,
+				E205DAAC15A2D69300506F69 /* InfoPlist.strings */,
+				E205DAAF15A2D69300506F69 /* main.m */,
+				E205DAB115A2D69300506F69 /* RouleVite-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E205DA9E15A2D69300506F69 /* RouleVite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E205DABD15A2D69300506F69 /* Build configuration list for PBXNativeTarget "RouleVite" */;
+			buildPhases = (
+				E205DA9B15A2D69300506F69 /* Sources */,
+				E205DA9C15A2D69300506F69 /* Frameworks */,
+				E205DA9D15A2D69300506F69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RouleVite;
+			productName = RouleVite;
+			productReference = E205DA9F15A2D69300506F69 /* RouleVite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E205DA9615A2D69200506F69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Céroce";
+			};
+			buildConfigurationList = E205DA9915A2D69200506F69 /* Build configuration list for PBXProject "RouleVite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E205DA9415A2D69200506F69;
+			productRefGroup = E205DAA015A2D69300506F69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E205DA9E15A2D69300506F69 /* RouleVite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E205DA9D15A2D69300506F69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E205DAAE15A2D69300506F69 /* InfoPlist.strings in Resources */,
+				E205DABA15A2D69300506F69 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E205DA9B15A2D69300506F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E205DAB015A2D69300506F69 /* main.m in Sources */,
+				E205DAB415A2D69300506F69 /* AppDelegate.m in Sources */,
+				E205DAB715A2D69300506F69 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E205DAAC15A2D69300506F69 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E205DAAD15A2D69300506F69 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E205DAB815A2D69300506F69 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E205DAB915A2D69300506F69 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E205DABB15A2D69300506F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E205DABC15A2D69300506F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E205DABE15A2D69300506F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouleVite/RouleVite-Prefix.pch";
+				INFOPLIST_FILE = "RouleVite/RouleVite-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E205DABF15A2D69300506F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RouleVite/RouleVite-Prefix.pch";
+				INFOPLIST_FILE = "RouleVite/RouleVite-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E205DA9915A2D69200506F69 /* Build configuration list for PBXProject "RouleVite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E205DABB15A2D69300506F69 /* Debug */,
+				E205DABC15A2D69300506F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E205DABD15A2D69300506F69 /* Build configuration list for PBXNativeTarget "RouleVite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E205DABE15A2D69300506F69 /* Debug */,
+				E205DABF15A2D69300506F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E205DA9615A2D69200506F69 /* Project object */;
+}
