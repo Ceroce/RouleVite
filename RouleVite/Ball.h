@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameItem.h"
 
-@interface Ball : NSObject
+
+@interface Ball : NSObject <GameItem>
 
 @property (nonatomic, assign) CGFloat skyHeight;
 
 - (void) touchBegan;
 - (void) touchEnded;
-- (void) update;
-- (void) draw;
 
 @end

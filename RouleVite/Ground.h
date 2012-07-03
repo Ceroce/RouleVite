@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameItem.h"
 
-@interface Ground : NSObject
+@interface Ground : NSObject <GameItem>
 
 @property (nonatomic, assign) CGSize screenSize;
 @property (nonatomic, assign) CGFloat height;
-
-- (void) update;
-- (void) draw;
 
 @end

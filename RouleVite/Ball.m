@@ -33,7 +33,7 @@
     raising = NO;
 }
 
-- (void) update
+- (void) updateAtTimestamp:(CFTimeInterval)timestamp
 {
     const float kBallElevationIncrement = 8.0;
     float elevationMax = skyHeight - DIAMETER;

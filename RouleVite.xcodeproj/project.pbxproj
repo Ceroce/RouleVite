@@ -42,6 +42,7 @@
 		E205DAC915A2EC6D00506F69 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
 		E205DACB15A2F7EA00506F69 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
 		E205DACC15A2F7EA00506F69 /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
+		E205DACE15A2FAC000506F69 /* GameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 				E205DAB815A2D69300506F69 /* ViewController.xib */,
 				E205DAC015A2D7DA00506F69 /* GameView.h */,
 				E205DAC115A2D7DA00506F69 /* GameView.m */,
+				E205DACE15A2FAC000506F69 /* GameItem.h */,
 				E205DAC815A2EC6D00506F69 /* Ball.h */,
 				E205DAC915A2EC6D00506F69 /* Ball.m */,
 				E205DACB15A2F7EA00506F69 /* Ground.h */,

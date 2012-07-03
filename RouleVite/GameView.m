@@ -71,8 +71,8 @@
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
-    [ball update];
-    [ground update];
+    [ball updateAtTimestamp:sender.timestamp];
+    [ground updateAtTimestamp:sender.timestamp];
     
     [self setNeedsDisplay];
 }

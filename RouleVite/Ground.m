@@ -13,7 +13,7 @@
 @synthesize screenSize;
 @synthesize height;
 
-- (void) update
+- (void) updateAtTimestamp:(CFTimeInterval)timestamp
 {
     
 }
