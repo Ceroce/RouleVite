@@ -17,7 +17,7 @@
 @interface GameView ()
 {
     float ballElevation;
-    BOOL touched;
+    BOOL ballRaising;
 }
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -64,11 +64,14 @@
 {
     const float kBallElevationIncrement = 8.0;
     
-    if(touched)
+    if(ballRaising)
     {
         ballElevation += kBallElevationIncrement;
         if(ballElevation > ELEVATION_MAX)
+        {
             ballElevation = ELEVATION_MAX;
+            ballRaising = NO;
+        }
     }
     else
     {
@@ -117,12 +120,13 @@
 // MARK: Touch events
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    touched = YES;
+    if(ballElevation == 0.0)    // On the ground
+        ballRaising = YES;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    touched = NO;
+    ballRaising = NO;
 }
 
 @end
