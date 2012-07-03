@@ -15,6 +15,7 @@
 		E205DAB415A2D69300506F69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAB315A2D69300506F69 /* AppDelegate.m */; };
 		E205DAB715A2D69300506F69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAB615A2D69300506F69 /* ViewController.m */; };
 		E205DABA15A2D69300506F69 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E205DAB815A2D69300506F69 /* ViewController.xib */; };
+		E205DAC215A2D7DA00506F69 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAC115A2D7DA00506F69 /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		E205DAA315A2D69300506F69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E205DAA515A2D69300506F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E205DAA715A2D69300506F69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E205DAAB15A2D69300506F69 /* RouleVite-Info.plist */ = {isa = PBXFileReference; path = "RouleVite-Info.plist"; sourceTree = "<group>"; };
+		E205DAAB15A2D69300506F69 /* RouleVite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RouleVite-Info.plist"; sourceTree = "<group>"; };
 		E205DAAD15A2D69300506F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E205DAAF15A2D69300506F69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E205DAB115A2D69300506F69 /* RouleVite-Prefix.pch */ = {isa = PBXFileReference; path = "RouleVite-Prefix.pch"; sourceTree = "<group>"; };
-		E205DAB215A2D69300506F69 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E205DAB115A2D69300506F69 /* RouleVite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RouleVite-Prefix.pch"; sourceTree = "<group>"; };
+		E205DAB215A2D69300506F69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E205DAB315A2D69300506F69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E205DAB515A2D69300506F69 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E205DAB515A2D69300506F69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E205DAB615A2D69300506F69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E205DAB915A2D69300506F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		E205DAC015A2D7DA00506F69 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GameView.h; sourceTree = "<group>"; };
+		E205DAC115A2D7DA00506F69 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				E205DAB515A2D69300506F69 /* ViewController.h */,
 				E205DAB615A2D69300506F69 /* ViewController.m */,
 				E205DAB815A2D69300506F69 /* ViewController.xib */,
+				E205DAC015A2D7DA00506F69 /* GameView.h */,
+				E205DAC115A2D7DA00506F69 /* GameView.m */,
 				E205DAAA15A2D69300506F69 /* Supporting Files */,
 			);
 			path = RouleVite;
@@ -164,6 +169,7 @@
 				E205DAB015A2D69300506F69 /* main.m in Sources */,
 				E205DAB415A2D69300506F69 /* AppDelegate.m in Sources */,
 				E205DAB715A2D69300506F69 /* ViewController.m in Sources */,
+				E205DAC215A2D7DA00506F69 /* GameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
