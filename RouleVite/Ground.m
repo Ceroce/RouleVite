@@ -7,6 +7,7 @@
 //
 
 #import "Ground.h"
+#import "GroundBlock.h"
 
 #define BLOCKS_IN_WIDTH     20
 #define UPPER_LAYER_HEIGHT  8.0
@@ -18,9 +19,9 @@ const char kObstacles[] = "_________________________ww______________ww______ww__
     CFTimeInterval timePosition;
 }
 
+@property (nonatomic, strong) NSMutableArray *blocks;
+
 + (void) _drawUndergroundInRect:(CGRect)rect;
-+ (void) _drawBasaltInRect:(CGRect)rect;
-+ (void) _drawPeaksInRect:(CGRect)rect;
 
 @end
 
@@ -28,11 +29,47 @@ const char kObstacles[] = "_________________________ww______________ww______ww__
 
 @synthesize screenSize;
 @synthesize height;
+@synthesize blocks;
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        blocks = [[NSMutableArray alloc] init];
+        unsigned blockIndex;
+        for(blockIndex = 0; blockIndex <= BLOCKS_IN_WIDTH; blockIndex++)
+        {
+            GroundBlock *block = [[GroundBlock alloc] init];
+            [blocks addObject:block];
+        }
+    }
+    return self;
+}
 
 - (void) updateAtTimePosition:(CFTimeInterval)newTimePosition
 {
     timePosition = newTimePosition;
     
+    float animationPosition = timePosition*15.0;
+    unsigned leftCharIndex = animationPosition;
+    float blockPartOnLeft = animationPosition - leftCharIndex;
+    float blockWidth = screenSize.width/BLOCKS_IN_WIDTH;
+    
+    NSUInteger blockIndex;
+    for(blockIndex = 0; blockIndex <= BLOCKS_IN_WIDTH; blockIndex++)
+    {
+        GroundBlock *block = [blocks objectAtIndex:blockIndex];
+        block.rect = CGRectMake((blockIndex-blockPartOnLeft) * blockWidth, 
+                                 screenSize.height-height, 
+                                 blockWidth, 
+                                 UPPER_LAYER_HEIGHT);
+        
+        char obstacle = kObstacles[leftCharIndex+blockIndex];
+        if(obstacle == '_')
+            block.type = GroundBlockType_Basalt;
+        else
+            block.type = GroundBlockType_Peaks;
+    }
 }
 
 - (void) draw
@@ -42,24 +79,9 @@ const char kObstacles[] = "_________________________ww______________ww______ww__
                                         screenSize.width, height-UPPER_LAYER_HEIGHT);
     [[self class] _drawUndergroundInRect:undergroundRect];
    
-    float animationPosition = timePosition*15.0;
-    unsigned leftCharIndex = animationPosition;
-    float blockPartOnLeft = animationPosition - leftCharIndex;
-    float blockWidth = screenSize.width/BLOCKS_IN_WIDTH;
-    
-    NSUInteger block;
-    for(block = 0; block <= BLOCKS_IN_WIDTH; block++)
-    {
-        CGRect rect = CGRectMake((block-blockPartOnLeft) * blockWidth, 
-                                 screenSize.height-height, 
-                                 blockWidth, 
-                                 UPPER_LAYER_HEIGHT);
-        char obstacle = kObstacles[leftCharIndex+block];
-        if(obstacle == '_')
-            [[self class] _drawBasaltInRect:rect];
-        else
-            [[self class] _drawPeaksInRect:rect];
-    }
+    for(GroundBlock *block in blocks)
+        [block draw];
+
 }
 
 + (void) _drawUndergroundInRect:(CGRect)rect
@@ -68,17 +90,7 @@ const char kObstacles[] = "_________________________ww______________ww______ww__
     UIRectFill(rect);     
 }
 
-+ (void) _drawBasaltInRect:(CGRect)rect
-{
-    [[UIColor grayColor] setFill];
-    UIRectFill(rect);    
-}
 
-+ (void) _drawPeaksInRect:(CGRect)rect
-{
-    [[UIColor whiteColor] setFill];
-    UIRectFill(rect);        
-}
 
 
 @end
