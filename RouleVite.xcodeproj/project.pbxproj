@@ -32,7 +32,7 @@
 		E205DAB515A2D69300506F69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E205DAB615A2D69300506F69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E205DAB915A2D69300506F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		E205DAC015A2D7DA00506F69 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GameView.h; sourceTree = "<group>"; };
+		E205DAC015A2D7DA00506F69 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		E205DAC115A2D7DA00506F69 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
