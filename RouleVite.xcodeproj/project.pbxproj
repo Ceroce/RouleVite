@@ -18,6 +18,7 @@
 		E205DAC215A2D7DA00506F69 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAC115A2D7DA00506F69 /* GameView.m */; };
 		E205DAC715A2DCF400506F69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E205DAC615A2DCF400506F69 /* QuartzCore.framework */; };
 		E205DACA15A2EC6D00506F69 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAC915A2EC6D00506F69 /* Ball.m */; };
+		E205DACD15A2F7EA00506F69 /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DACC15A2F7EA00506F69 /* Ground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		E205DAC615A2DCF400506F69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E205DAC815A2EC6D00506F69 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
 		E205DAC915A2EC6D00506F69 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
+		E205DACB15A2F7EA00506F69 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
+		E205DACC15A2F7EA00506F69 /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				E205DAC115A2D7DA00506F69 /* GameView.m */,
 				E205DAC815A2EC6D00506F69 /* Ball.h */,
 				E205DAC915A2EC6D00506F69 /* Ball.m */,
+				E205DACB15A2F7EA00506F69 /* Ground.h */,
+				E205DACC15A2F7EA00506F69 /* Ground.m */,
 				E205DAAA15A2D69300506F69 /* Supporting Files */,
 			);
 			path = RouleVite;
@@ -180,6 +185,7 @@
 				E205DAB715A2D69300506F69 /* ViewController.m in Sources */,
 				E205DAC215A2D7DA00506F69 /* GameView.m in Sources */,
 				E205DACA15A2EC6D00506F69 /* Ball.m in Sources */,
+				E205DACD15A2F7EA00506F69 /* Ground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

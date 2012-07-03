@@ -10,9 +10,10 @@
 
 #import "GameView.h"
 #import "Ball.h"
+#import "Ground.h"
 
 #define SCREEN_HEIGHT   320.0
-#define GROUND_Y    272.0
+#define GROUND_HEIGHT   48.0
 
 
 @interface GameView ()
@@ -22,9 +23,9 @@
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, strong) Ball *ball;
+@property (nonatomic, strong) Ground *ground;
 
 - (void) _drawBackground;
-- (void) _drawGround;
 
 @end
 
@@ -34,6 +35,7 @@
 
 @synthesize displayLink;
 @synthesize ball;
+@synthesize ground;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -50,7 +52,11 @@
     if (self) 
     {
         ball = [[Ball alloc] init];
-        ball.skyHeight = GROUND_Y;
+        ball.skyHeight = SCREEN_HEIGHT-GROUND_HEIGHT;
+        
+        ground = [[Ground alloc] init];
+        ground.screenSize = self.frame.size;
+        ground.height = GROUND_HEIGHT;
         
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -67,6 +73,7 @@
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
     [ball update];
+    [ground update];
     
     [self setNeedsDisplay];
 }
@@ -78,7 +85,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [self _drawBackground];
-    [self _drawGround];
+    [ground draw];
     [ball draw];
 }
 
@@ -87,12 +94,6 @@
 {
     [[UIColor colorWithRed:118.0/255.0 green:181.0/255.0 blue:252.0/255.0 alpha:1.0] setFill];
     UIRectFill(self.bounds);    
-}
-
-- (void) _drawGround
-{
-    [[UIColor colorWithRed:125.0/255.0 green:70.0/255.0 blue:25.0/255.0 alpha:1.0] setFill];
-    UIRectFill(CGRectMake(0.0, GROUND_Y, 480.0, 48.0));      
 }
 
 
