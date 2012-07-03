@@ -15,6 +15,7 @@
 @interface GameView ()
 {
     float ballElevation;
+    BOOL touched;
 }
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -59,7 +60,11 @@
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
-    ballElevation += 1.0;
+    if(touched)
+        ballElevation += 1.0;
+    else
+        ballElevation -= 1.0;
+    
     [self setNeedsDisplay];
 }
 
@@ -95,6 +100,17 @@
                                  BALL_DIAMETER, 
                                  BALL_DIAMETER);
     [[UIBezierPath bezierPathWithOvalInRect:ballRect] fill];
+}
+
+// MARK: Touch events
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touched = YES;
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touched = NO;
 }
 
 @end
