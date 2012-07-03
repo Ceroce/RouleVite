@@ -10,6 +10,6 @@
 @protocol GameItem <NSObject>
 
 - (void) draw;
-- (void) updateAtTimestamp:(CFTimeInterval)timestamp;
+- (void) updateAtTimePosition:(CFTimeInterval)timePosition;
 
 @end

@@ -8,14 +8,24 @@
 
 #import "Ground.h"
 
+#define BLOCKS_ONSCREEN     30
+
+@interface Ground ()
+{
+
+}
+
+@end
+
 @implementation Ground
 
 @synthesize screenSize;
 @synthesize height;
+@synthesize obstacles;
 
-- (void) updateAtTimestamp:(CFTimeInterval)timestamp
+- (void) updateAtTimePosition:(CFTimeInterval)timePosition
 {
-    
+
 }
 
 - (void) draw

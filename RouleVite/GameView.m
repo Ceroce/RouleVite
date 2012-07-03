@@ -17,7 +17,7 @@
 
 @interface GameView ()
 {
-
+    CFTimeInterval timePosition;
 }
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -57,6 +57,8 @@
         ground.screenSize = self.frame.size;
         ground.height = GROUND_HEIGHT;
         
+        ground.obstacles = @"_________________________ww______________ww______ww________________________ww______________________wwww____________________wwww______wwwwwwww____________________ww____ww____ww____ww_______ww__________________";
+        
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
@@ -71,8 +73,10 @@
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
-    [ball updateAtTimestamp:sender.timestamp];
-    [ground updateAtTimestamp:sender.timestamp];
+    timePosition += (sender.duration * sender.frameInterval);
+    
+    [ball updateAtTimePosition:timePosition];
+    [ground updateAtTimePosition:timePosition];
     
     [self setNeedsDisplay];
 }
