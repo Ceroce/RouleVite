@@ -23,6 +23,7 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, strong) Ball *ball;
 @property (nonatomic, strong) Ground *ground;
+@property (nonatomic, strong) UITextField *distanceTextField;
 
 - (void) _drawBackground;
 
@@ -35,6 +36,7 @@
 @synthesize displayLink;
 @synthesize ball;
 @synthesize ground;
+@synthesize distanceTextField;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -59,6 +61,10 @@
 
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        
+        distanceTextField = [[UITextField alloc] initWithFrame:CGRectMake(396.0, 15.0, 67.0, 20.0)];
+        distanceTextField.textAlignment = UITextAlignmentRight;
+        [self addSubview:distanceTextField];
     }
     return self;
 }
@@ -72,6 +78,8 @@
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
     timePosition += (sender.duration * sender.frameInterval);
+    unsigned distance = timePosition*30.0;
+    distanceTextField.text = [NSString stringWithFormat:@"%u m", distance];
     
     [ball updateAtTimePosition:timePosition];
     [ground updateAtTimePosition:timePosition];

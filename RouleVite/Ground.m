@@ -8,7 +8,7 @@
 
 #import "Ground.h"
 
-#define BLOCKS_IN_WIDTH     30
+#define BLOCKS_IN_WIDTH     20
 #define UPPER_LAYER_HEIGHT  8.0
 
 const char kObstacles[] = "_________________________ww______________ww______ww________________________ww______________________wwww____________________wwww______wwwwwwww____________________ww____ww____ww____ww_______ww__________________";
@@ -42,13 +42,13 @@ const char kObstacles[] = "_________________________ww______________ww______ww__
                                         screenSize.width, height-UPPER_LAYER_HEIGHT);
     [[self class] _drawUndergroundInRect:undergroundRect];
    
-    float animationPosition = timePosition*10.0;
+    float animationPosition = timePosition*15.0;
     unsigned leftCharIndex = animationPosition;
     float blockPartOnLeft = animationPosition - leftCharIndex;
     float blockWidth = screenSize.width/BLOCKS_IN_WIDTH;
     
     NSUInteger block;
-    for(block = 0; block < BLOCKS_IN_WIDTH; block++)
+    for(block = 0; block <= BLOCKS_IN_WIDTH; block++)
     {
         CGRect rect = CGRectMake((block-blockPartOnLeft) * blockWidth, 
                                  screenSize.height-height, 
