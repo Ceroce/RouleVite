@@ -7,6 +7,7 @@
 //
 
 #import "GameView.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define GROUND_Y    272.0
 #define BALL_DIAMETER   32.0
@@ -15,6 +16,8 @@
 {
     float ballElevation;
 }
+
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 - (void) _drawBackground;
 - (void) _drawGround;
@@ -25,6 +28,10 @@
 
 @implementation GameView
 
+
+@synthesize displayLink;
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -34,7 +41,31 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
+        [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    return self;
+}
 
+- (void)dealloc
+{
+    [displayLink invalidate];
+}
+
+// MARK: Sequencing
+- (void) _displayLinkDidFire:(CADisplayLink *)sender
+{
+    ballElevation += 1.0;
+    [self setNeedsDisplay];
+}
+
+
+
+// MARK: Drawing
 
 - (void)drawRect:(CGRect)rect
 {
@@ -59,7 +90,10 @@
 - (void) _drawBall
 {
     [[UIColor redColor] setFill];
-    CGRect ballRect = CGRectMake(50.0, GROUND_Y-BALL_DIAMETER, BALL_DIAMETER, BALL_DIAMETER);
+    CGRect ballRect = CGRectMake(50.0, 
+                                 GROUND_Y-BALL_DIAMETER-ballElevation, 
+                                 BALL_DIAMETER, 
+                                 BALL_DIAMETER);
     [[UIBezierPath bezierPathWithOvalInRect:ballRect] fill];
 }
 
