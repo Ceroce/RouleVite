@@ -8,12 +8,12 @@
 
 #import "Ball.h"
 
-#define BALL_DIAMETER   32.0
+#define DIAMETER   32.0
 
 @interface Ball ()
 {
-    float ballElevation;
-    BOOL ballRaising;
+    float elevation;
+    BOOL raising;
 }
 
 @end
@@ -24,34 +24,34 @@
 
 - (void) touchBegan
 {
-    if(ballElevation == 0.0)    // On the ground
-        ballRaising = YES;
+    if(elevation == 0.0)    // On the ground
+        raising = YES;
 }
 
 - (void) touchEnded
 {
-    ballRaising = NO;
+    raising = NO;
 }
 
 - (void) update
 {
     const float kBallElevationIncrement = 8.0;
-    float elevationMax = skyHeight - BALL_DIAMETER;
+    float elevationMax = skyHeight - DIAMETER;
     
-    if(ballRaising)
+    if(raising)
     {
-        ballElevation += kBallElevationIncrement;
-        if(ballElevation > elevationMax)
+        elevation += kBallElevationIncrement;
+        if(elevation > elevationMax)
         {
-            ballElevation = elevationMax;
-            ballRaising = NO;
+            elevation = elevationMax;
+            raising = NO;
         }
     }
     else
     {
-        ballElevation -= kBallElevationIncrement;
-        if(ballElevation < 0.0)
-            ballElevation = 0.0;
+        elevation -= kBallElevationIncrement;
+        if(elevation < 0.0)
+            elevation = 0.0;
     }    
 }
 
@@ -59,9 +59,9 @@
 {
     [[UIColor redColor] setFill];
     CGRect ballRect = CGRectMake(50.0, 
-                                 skyHeight-BALL_DIAMETER-ballElevation, 
-                                 BALL_DIAMETER, 
-                                 BALL_DIAMETER);
+                                 skyHeight-DIAMETER-elevation, 
+                                 DIAMETER, 
+                                 DIAMETER);
     [[UIBezierPath bezierPathWithOvalInRect:ballRect] fill];    
 }
 
