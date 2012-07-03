@@ -17,6 +17,7 @@
 		E205DABA15A2D69300506F69 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E205DAB815A2D69300506F69 /* ViewController.xib */; };
 		E205DAC215A2D7DA00506F69 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAC115A2D7DA00506F69 /* GameView.m */; };
 		E205DAC715A2DCF400506F69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E205DAC615A2DCF400506F69 /* QuartzCore.framework */; };
+		E205DACA15A2EC6D00506F69 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = E205DAC915A2EC6D00506F69 /* Ball.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		E205DAC015A2D7DA00506F69 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		E205DAC115A2D7DA00506F69 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		E205DAC615A2DCF400506F69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E205DAC815A2EC6D00506F69 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		E205DAC915A2EC6D00506F69 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				E205DAB815A2D69300506F69 /* ViewController.xib */,
 				E205DAC015A2D7DA00506F69 /* GameView.h */,
 				E205DAC115A2D7DA00506F69 /* GameView.m */,
+				E205DAC815A2EC6D00506F69 /* Ball.h */,
+				E205DAC915A2EC6D00506F69 /* Ball.m */,
 				E205DAAA15A2D69300506F69 /* Supporting Files */,
 			);
 			path = RouleVite;
@@ -174,6 +179,7 @@
 				E205DAB415A2D69300506F69 /* AppDelegate.m in Sources */,
 				E205DAB715A2D69300506F69 /* ViewController.m in Sources */,
 				E205DAC215A2D7DA00506F69 /* GameView.m in Sources */,
+				E205DACA15A2EC6D00506F69 /* Ball.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

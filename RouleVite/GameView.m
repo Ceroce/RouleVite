@@ -6,25 +6,25 @@
 //  Copyright (c) 2012 Céroce. All rights reserved.
 //
 
-#import "GameView.h"
 #import <QuartzCore/QuartzCore.h>
+
+#import "GameView.h"
+#import "Ball.h"
 
 #define SCREEN_HEIGHT   320.0
 #define GROUND_Y    272.0
-#define BALL_DIAMETER   32.0
-#define ELEVATION_MAX   (GROUND_Y - BALL_DIAMETER)
+
 
 @interface GameView ()
 {
-    float ballElevation;
-    BOOL ballRaising;
+
 }
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
+@property (nonatomic, strong) Ball *ball;
 
 - (void) _drawBackground;
 - (void) _drawGround;
-- (void) _drawBall;
 
 @end
 
@@ -33,7 +33,7 @@
 
 
 @synthesize displayLink;
-
+@synthesize ball;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -47,7 +47,11 @@
 - (id)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
-    if (self) {
+    if (self) 
+    {
+        ball = [[Ball alloc] init];
+        ball.skyHeight = GROUND_Y;
+        
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
@@ -62,23 +66,7 @@
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
-    const float kBallElevationIncrement = 8.0;
-    
-    if(ballRaising)
-    {
-        ballElevation += kBallElevationIncrement;
-        if(ballElevation > ELEVATION_MAX)
-        {
-            ballElevation = ELEVATION_MAX;
-            ballRaising = NO;
-        }
-    }
-    else
-    {
-        ballElevation -= kBallElevationIncrement;
-        if(ballElevation < 0.0)
-            ballElevation = 0.0;
-    }
+    [ball update];
     
     [self setNeedsDisplay];
 }
@@ -91,7 +79,7 @@
 {
     [self _drawBackground];
     [self _drawGround];
-    [self _drawBall];
+    [ball draw];
 }
 
 
@@ -107,26 +95,16 @@
     UIRectFill(CGRectMake(0.0, GROUND_Y, 480.0, 48.0));      
 }
 
-- (void) _drawBall
-{
-    [[UIColor redColor] setFill];
-    CGRect ballRect = CGRectMake(50.0, 
-                                 GROUND_Y-BALL_DIAMETER-ballElevation, 
-                                 BALL_DIAMETER, 
-                                 BALL_DIAMETER);
-    [[UIBezierPath bezierPathWithOvalInRect:ballRect] fill];
-}
 
 // MARK: Touch events
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if(ballElevation == 0.0)    // On the ground
-        ballRaising = YES;
+    [ball touchBegan];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    ballRaising = NO;
+    [ball touchEnded];
 }
 
 @end
