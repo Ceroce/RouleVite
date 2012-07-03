@@ -9,8 +9,10 @@
 #import "GameView.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define SCREEN_HEIGHT   320.0
 #define GROUND_Y    272.0
 #define BALL_DIAMETER   32.0
+#define ELEVATION_MAX   (GROUND_Y - BALL_DIAMETER)
 
 @interface GameView ()
 {
@@ -60,10 +62,20 @@
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
 {
+    const float kBallElevationIncrement = 8.0;
+    
     if(touched)
-        ballElevation += 1.0;
+    {
+        ballElevation += kBallElevationIncrement;
+        if(ballElevation > ELEVATION_MAX)
+            ballElevation = ELEVATION_MAX;
+    }
     else
-        ballElevation -= 1.0;
+    {
+        ballElevation -= kBallElevationIncrement;
+        if(ballElevation < 0.0)
+            ballElevation = 0.0;
+    }
     
     [self setNeedsDisplay];
 }
