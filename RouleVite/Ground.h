@@ -14,6 +14,4 @@
 @property (nonatomic, assign) CGSize screenSize;
 @property (nonatomic, assign) CGFloat height;
 
-@property (nonatomic, strong) NSString *obstacles;
-
 @end

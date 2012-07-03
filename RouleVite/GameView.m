@@ -56,9 +56,7 @@
         ground = [[Ground alloc] init];
         ground.screenSize = self.frame.size;
         ground.height = GROUND_HEIGHT;
-        
-        ground.obstacles = @"_________________________ww______________ww______ww________________________ww______________________wwww____________________wwww______wwwwwwww____________________ww____ww____ww____ww_______ww__________________";
-        
+
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayLinkDidFire:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
