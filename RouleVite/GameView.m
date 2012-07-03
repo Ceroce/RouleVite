@@ -12,7 +12,6 @@
 #import "Ball.h"
 #import "Ground.h"
 
-#define SCREEN_HEIGHT   320.0
 #define GROUND_HEIGHT   48.0
 
 
@@ -52,7 +51,7 @@
     if (self) 
     {
         ball = [[Ball alloc] init];
-        ball.skyHeight = SCREEN_HEIGHT-GROUND_HEIGHT;
+        ball.skyHeight = self.frame.size.height-GROUND_HEIGHT;
         
         ground = [[Ground alloc] init];
         ground.screenSize = self.frame.size;
