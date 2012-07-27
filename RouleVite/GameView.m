@@ -76,7 +76,7 @@
 
 // MARK: Sequencing
 - (void) _displayLinkDidFire:(CADisplayLink *)sender
-{
+{    
     timePosition += (sender.duration * sender.frameInterval);
     unsigned distance = timePosition*30.0;
     distanceTextField.text = [NSString stringWithFormat:@"%u m", distance];
@@ -85,6 +85,22 @@
     [ground updateAtTimePosition:timePosition];
     
     [self setNeedsDisplay];
+    
+    // Is the ball hitting peaks ?
+    if((ball.elevation == 0.0) && [ground peaksHitAtX:ball.center.x])
+    {
+        displayLink.paused = YES;
+        
+        NSString *message = [NSString stringWithFormat:@"Distance parcourue: %i m", distance];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Perdu!" message:message delegate:self cancelButtonTitle:@"Recommencer" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    timePosition = 0.0;
+    displayLink.paused = NO;
 }
 
 

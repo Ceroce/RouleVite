@@ -14,4 +14,6 @@
 @property (nonatomic, assign) CGSize screenSize;
 @property (nonatomic, assign) CGFloat height;
 
+- (BOOL) peaksHitAtX:(CGFloat)x;
+
 @end

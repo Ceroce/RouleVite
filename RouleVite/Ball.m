@@ -16,11 +16,14 @@
     BOOL raising;
 }
 
+@property (nonatomic, readwrite, assign) float elevation;
+
 @end
 
 @implementation Ball
 
 @synthesize skyHeight;
+@synthesize elevation;
 
 - (void) touchBegan
 {
@@ -63,6 +66,11 @@
                                  DIAMETER, 
                                  DIAMETER);
     [[UIBezierPath bezierPathWithOvalInRect:ballRect] fill];    
+}
+
+- (CGPoint) center
+{
+    return CGPointMake(50.0+DIAMETER/2.0, skyHeight-DIAMETER/2.0);
 }
 
 @end
